@@ -8,6 +8,11 @@ Afin de pouvoir utiliser ce code il faut dans un premier temps créer la base de
 Dans ce fichier il est précisé les crédits de connexion à la base de données, veuillez les changer si les vôtres sont différents de "admin" "admin". L4-5 du fichier main.py se trouvant à la racine. 
 
 
+Afin d'installer les dépendances Node.js nécessaires, veuillez effetuez la commande suivante : 
+
+npm install 
+
+
 Structure du projet : 
 
 1 fichier nommé server.js qui est le serveur Node.js
