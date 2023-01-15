@@ -1,0 +1,46 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/login.css">
+</head>
+
+<body class="align">
+    <div class="main flex">
+        <div class="form align">
+            <div class="subform">
+                <form action="/login" method="post">
+                    <p class="msg">
+                        <%= msg %>
+                    </p>
+                    <div class="form-floating mb-3 login">
+                        <input type="text" name="id" class="form-control" id="login">
+                        <label for="login">Login</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" name="password" class="form-control" id="pass">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="align fs-1 mt-5 btn">
+                        <button class="btn btn-primary align" type="submit" value="accept">
+                            Connexion
+                        </button>
+                    </div>
+                </form>
+
+                <div class="align fs-1 mt-5 btn">
+                    <a class="btn btn-info" href="/register"> Créer un compte</a> 
+                </div>
+    
+            </div>
+        </div>
+        <div class="img"></div>
+    </div>
+</body>
+
+</html>

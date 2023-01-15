@@ -1,0 +1,76 @@
+@font-face {
+    font-family: oswald;
+    src: url(/public/font/Oswald/Oswald-VariableFont_wght.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --border-radius : 20px;
+    --blanc : #FFFFFF ;
+    --degrade : linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: var(--degrade);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+.flex{
+    display: flex;
+}
+.align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    height: 70vh;
+    width: 50%;
+    background-color: var(--blanc);
+    border-radius: var(--border-radius);
+    transition: all 1s;
+}
+.main:hover{
+    transform: scale3d(1.01,1.01,1.01);
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 20px 45px;
+    transition: all .7s;
+
+    
+}
+.form{
+    width: 100%;
+}
+div.img{
+    width: 100%;
+    background-image: url(../assets/piano.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;    
+    border-bottom-right-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+div.btn{
+    transition: all .5s;
+}
+div.btn:hover{
+    transform: scale3d(1.2,1.2,1.2);
+    transition: all .5s;
+}       
+
+.msg{
+    color: red;
+    width: 50%;
+    margin-inline: auto;
+    font-weight: 700;
+    text-align: center;
+    font-size: 24px;
+    font-family: oswald;
+}
+
+@keyframes circle{
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);}
+}

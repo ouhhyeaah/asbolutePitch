@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>The Absolute Pitch</title>
+    <link rel="stylesheet" href="/public/css/index.css">
+</head>
+
+<body>
+    <%- include('../partials/navbar'); %>
+
+        <div class="main" id="page">
+            <div class="corps">
+                <h1 class="align title">Dernières partitions jouées </h1>
+                <% last.forEach(function(last) { %>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="card-title duree">
+                                L'enregistrement à durée <%= last.duree %> secondes 
+                            </div>
+                            <p id="data">
+                                <%= last.notes %>
+                            </p>
+                            <div id="notes">
+
+                            </div>
+                            <div class="duree">
+                                <%= last.date %>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+
+                        <h1 class="align title">
+                            <%= tagline %>
+                        </h1>
+                        <% data.forEach(function(data) { %>
+                            <div class="cards" id="cards">
+                                <div class="card">
+                                    <div class="card-title duree">
+                                        L'enregistrement à durée <%= data.duree %> secondes 
+                                    </div>
+                                    <p id="data">
+                                        <%= data.notes %>
+                                    </p>
+                                    <div id="notes">
+
+                                    </div>
+                                    <div class="duree">
+                                        <%= data.date %>
+                                    </div>
+                                </div>
+                            </div>
+                            <% });%>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            document.body.addEventListener("click", () => {
+                var svg = document.getElementById('svg')
+                svg.setAttribute('class', 'animated')
+                setTimeout(() => {
+                    svg.removeAttribute('class', 'animated')
+                    svg.setAttribute('class', 'svg')
+                }, 500)
+            })
+
+            var canvas = document.getElementById("canvas");
+            var datas = document.querySelectorAll("#data");
+            var notesPlace = document.querySelectorAll("#notes");
+
+            // parcours de l'ensemble des p avec l'id data ;
+            // boucle a faire pour l'ensemble des p avec l'id data ;
+            for (let i = 0; i < datas.length; i++) {
+                // création d'une div avec la classe sheetmusic 
+                var div = document.createElement("div");
+                div.className = "sheetmusic"
+                // plus l'id canvas a chacunes des div. 
+                div.setAttribute("id", "canvas");
+                // ajout des div à la div ayant l'id notes ;
+                notesPlace[i].appendChild(div);
+                // le nb de case est : (le nombre de notes/4) car 4 notes par case, la valeur est arrondi a la valeur sup. 
+                var nbCases = Math.ceil(datas[i].innerText.length / 3)
+                // le nb de ligne est le nb de case / 2, arrondi sup. Math.ceil();
+                var nbLines = Math.ceil(nbCases / 2);
+                // débug ; 
+                console.log("Nb note pour la chaine : " + datas[i].innerText + " = " + datas[i].innerText.length)
+                console.log("Nb de cases nécessaire = " + nbCases);
+                console.log("NB de lignes  = " + nbLines)
+                // création section avec la classe staff ;
+                var section = document.createElement("section");
+                section.className = "staff";
+                div.appendChild(section);
+                // création des barres de mesure ;
+                for (let a = 0; a < nbCases; a++) {
+                    var bar = document.createElement("section");
+                    bar.className = "bar";
+                    section.appendChild(bar)
+                    if (a == 0) {
+                        var span = document.createElement("span");
+                        span.className = "g-clef";
+                        span.innerHTML = "&#119070;"
+                        bar.appendChild(span)
+                    }
+                }
+                var span = document.createElement("span");
+                var divs = document.querySelectorAll(".staff");
+                var currentDiv = 0;
+                for (let n = 0; n < datas[i].innerText.length; n++) {
+                    if (n % 3 == 0 && n != 0) {
+                        currentDiv += 1;
+                    }
+                    var span = document.createElement("span");
+                    switch (datas[i].innerText[n]) {
+                        case "A":
+                            span.className = "note lower-a";
+                            span.innerHTML = "&#9833;"
+                            divs[i].childNodes[currentDiv].appendChild(span)
+                            break;
+                        case "B":
+                            span.className = "note lower-b";
+                            span.innerHTML = "&#9833;"
+                            divs[i].childNodes[currentDiv].appendChild(span)
+                            break;
+                        case "C":
+                            span.className = "note lower-c";
+                            span.innerHTML = "&#9833;"
+                            divs[i].childNodes[currentDiv].appendChild(span)
+                            break;
+                        case "D":
+                            span.className = "note lower-d";
+                            span.innerHTML = "&#9833;"
+                            divs[i].childNodes[currentDiv].appendChild(span)
+                            break;
+                        case "E":
+                            span.className = "note lower-e";
+                            span.innerHTML = "&#9833;"
+                            divs[i].childNodes[currentDiv].appendChild(span)
+                            break;
+                        case "F":
+                            span.className = "note lower-f";
+                            span.innerHTML = "&#9833;"
+                            divs[i].childNodes[currentDiv].appendChild(span)
+                            break;
+                        case "G":
+                            span.className = "note lower-g";
+                            span.innerHTML = "&#9833;"
+                            divs[i].childNodes[currentDiv].appendChild(span)
+                            break;
+                        case "H":
+                            span.className = "note lower-h";
+                            span.innerHTML = "&#9833;"
+                            divs[i].childNodes[currentDiv].appendChild(span)
+                            break;
+
+                    }
+                }
+
+                
+
+            }
+        </script>
+</body>
+
+</html>

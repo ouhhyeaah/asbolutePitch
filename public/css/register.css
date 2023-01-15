@@ -1,0 +1,56 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-size: 14px;
+}
+.align{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(62, 62, 62, 1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.form {
+  width: 447px;
+  height: 558px;
+  background: rgba(217, 217, 217, 1);
+  opacity: 1;
+  position: absolute;
+  top: 212px;
+  left: 284px;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  box-shadow: 23px 23px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.img {
+  width: 447px;
+  height: 558px;
+  background: url("/public/assets/register.jpg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 212px;
+  left: 731px;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  box-shadow: 23px 23px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
